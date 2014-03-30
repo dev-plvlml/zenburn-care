@@ -77,7 +77,7 @@
  (zenburn-Typedef-fg "#dfe4cf") ; gui=bold
  (zenburn-Type-fg "#dfdfbf") ; gui=bold
  (zenburn-Underlined-fg "#dcdccc") ; gui=underline
- (zenburn-VertSplit-fg "#303030") ; #2e3330 in latest .vim
+ (zenburn-VertSplit-fg "#2e3330") ; #303030 in original .vim
  (zenburn-VertSplit-bg "#688060")
  (zenburn-VisualNOS-fg "#333333")
  (zenburn-VisualNOS-bg "#f18c96") ; gui=bold,underline
@@ -127,8 +127,9 @@
  (zenburn-TabLine-bg "#222222") ; gui=bold
 
 ; Colors chosen by M4E5TR0
+ (m4e5tr0-LineNrCur-bg "#2e2e2e") ; same as zenburn-MatchParen-bg
  (m4e5tr0-Header-bg "#3a3a39"))
-  
+
 (custom-theme-set-faces
  'zenburn-by-m4e5tr0
 
@@ -141,12 +142,15 @@
  `(mode-line ((t (:foreground ,zenburn-StatusLine-fg :background ,zenburn-StatusLine-bg :inverse-video t :box (:style released-button)))))
  `(mode-line-inactive ((t (:foreground ,zenburn-StatusLineNC-fg :background ,zenburn-StatusLineNC-bg :inverse-video t :box nil))))
  `(vertical-border ((t (:foreground ,zenburn-VertSplit-fg :background ,zenburn-VertSplit-bg :inverse-video t))))
+ `(window-divider ((t (:foreground ,zenburn-VertSplit-fg))))
+ `(window-divider-first-pixel ((t (:foreground ,zenburn-VertSplit-fg))))
+ `(window-divider-last-pixel ((t (:foreground ,zenburn-VertSplit-fg))))
  `(header-line ((t (:background ,m4e5tr0-Header-bg :inverse-video nil))))
  `(linum ((t (:foreground ,zenburn-LineNr-fg :background ,zenburn-LineNr-bg :weight normal :slant normal :underline nil))))
- `(linum-highlight-face ((t (:foreground ,zenburn-LineNr-fg :background ,zenburn-MatchParen-bg :weight bold :slant normal :underline nil))))
+ `(linum-highlight-face ((t (:foreground ,zenburn-LineNr-fg :background ,m4e5tr0-LineNrCur-bg :weight bold :slant normal :underline nil))))
  `(fringe ((t (:foreground ,zenburn-SignColumn-fg :background ,zenburn-SignColumn-bg :weight bold))))
  `(minibuffer-prompt ((t (:foreground ,zenburn-Question-fg :weight bold))))
- `(scroll-bar ((t (:foreground ,zenburn-MatchParen-bg :background ,zenburn-LineNr-bg))))
+ `(scroll-bar ((t (:foreground ,m4e5tr0-LineNrCur-bg :background ,zenburn-LineNr-bg))))
 
  `(isearch ((t (:foreground ,zenburn-IncSearch-fg :background ,zenburn-IncSearch-bg :inverse-video t))))
  `(isearch-fail ((t (:foreground ,zenburn-VisualNOS-fg :background ,zenburn-VisualNOS-bg :weight bold))))
@@ -164,6 +168,7 @@
 
  `(escape-glyph ((t (:foreground ,zenburn-NonText-fg))))
  `(nobreak-space ((t (:background ,zenburn-NonText-fg))))
+ `(trailing-whitespace ((t (:background ,zenburn-VisualNOS-bg))))
 
  `(font-lock-builtin-face ((t (:foreground ,zenburn-Statement-fg))))
  `(font-lock-comment-face ((t (:foreground ,zenburn-Comment-fg :italic t))))
