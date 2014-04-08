@@ -129,17 +129,17 @@
 ; Colors chosen by M4E5TR0
  (m4e5tr0-LineNrCur-bg "#2e2e2e") ; same as zenburn-MatchParen-bg
  (m4e5tr0-Header-bg "#3a3a39"))
-
+  
 (custom-theme-set-faces
  'zenburn-by-m4e5tr0
 
  `(default ((t (:foreground ,zenburn-Normal-fg :background ,zenburn-Normal-bg))))
- `(cursor ((t (:foreground ,zenburn-Cursor-fg :background ,zenburn-Cursor-bg))))
+ `(cursor ((t (:foreground ,zenburn-Cursor-fg :background ,zenburn-Cursor-bg :weight bold))))
  `(hl-line ((t (:background ,zenburn-CursorLine-bg))))
  `(col-highlight ((t (:background ,zenburn-CursorColumn-bg))))
  ;; `(highlight ((t ()))) ; TODO
  `(region ((t (:background ,zenburn-Visual-bg))))
- ;; `(secondary-selection ((t ()))) ; TODO
+ ;; `(secondary-selection ((t (:foreground ,zenburn-VisualNOS-fg :background ,zenburn-VisualNOS-bg)))) ; TODO
 
  `(mode-line ((t (:foreground ,zenburn-StatusLine-fg :background ,zenburn-StatusLine-bg :inverse-video t :box (:style released-button)))))
  `(mode-line-inactive ((t (:foreground ,zenburn-StatusLineNC-fg :background ,zenburn-StatusLineNC-bg :inverse-video t :box nil))))
@@ -161,6 +161,7 @@
  `(show-paren-match ((t (:foreground ,zenburn-MatchParen-fg :background ,zenburn-MatchParen-bg :weight bold))))
  `(show-paren-mismatch ((t (:foreground ,zenburn-VisualNOS-fg :background ,zenburn-VisualNOS-bg :weight bold))))
  `(completions-common-part ((t (:foreground ,zenburn-WildMenu-fg :background ,zenburn-WildMenu-bg))))
+ `(completions-first-difference ((t (:inherit unspecified :weight bold))))
 
  `(link ((t (:foreground ,zenburn-Number-fg :underline t))))
  `(link-visited ((t (:foreground ,zenburn-Float-fg :underline t))))
@@ -172,6 +173,7 @@
  `(nobreak-space ((t (:background ,zenburn-NonText-fg))))
  `(trailing-whitespace ((t (:background ,zenburn-VisualNOS-bg))))
 
+ ;; font-lock-mode
  `(font-lock-builtin-face ((t (:foreground ,zenburn-Statement-fg))))
  `(font-lock-comment-face ((t (:foreground ,zenburn-Comment-fg :italic t))))
  `(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
@@ -188,27 +190,24 @@
  `(font-lock-string-face ((t (:foreground ,zenburn-String-fg))))
  `(font-lock-type-face ((t (:foreground ,zenburn-Type-fg :weight bold))))
  `(font-lock-variable-name-face ((t (:foreground ,zenburn-Identifier-fg))))
- ;; `(font-lock-warning-face ((t ()))) ; TODO
+ `(font-lock-warning-face ((t (:foreground ,zenburn-SpellBad-fg)))) ; FIXME
 
  `(dired-directory ((t (:foreground ,zenburn-Directory-fg :weight bold))))
 
  ;; tabbar-mode
  `(tabbar-default ((t (:foreground ,zenburn-TabLineFill-fg :background ,zenburn-TabLineFill-bg :weight bold))))
  `(tabbar-highlight ((t (:inherit unspecified :underline t))))
- `(tabbar-button ((t (:inherit tabbar-default :box nil))))
- ;; `(tabbar-button-highlight ((t (:inherit tabbar-default :box t)))) ; TODO
+ `(tabbar-button ((t (:inherit tabbar-default :box nil)))) ; FIXME
+ ;; `(tabbar-button-highlight ((t ()))) ; TODO
  `(tabbar-unselected ((t (:foreground ,zenburn-TabLine-fg :background ,zenburn-TabLine-bg :weight bold :box nil))))
- ;; `(tabbar-modified ((t (:inherit tabbar-default :box nil)))) ; TODO
+ ;; `(tabbar-modified ((t ()))) ; TODO
  `(tabbar-selected ((t (:foreground ,zenburn-TabLineSel-fg :background ,zenburn-TabLineSel-bg :weight bold :box nil))))
  `(tabbar-separator ((t (:inherit tabbar-default))))
 
  ;; ido-mode
  `(ido-first-match ((t (:foreground ,zenburn-WildMenu-fg :background ,zenburn-WildMenu-bg))))
- `(ido-only-match ((t (:foreground ,zenburn-NonText-fg))))
+ ;; `(ido-only-match ((t ()))) ; TODO
  `(ido-subdir ((t (:foreground ,zenburn-Directory-fg :weight bold))))
-
- ;; semantic-mode
- `(semantic-highlight-func-current-tag-face ((t (:background ,m4e5tr0-Header-bg))))
 
  ;; m4e5tr0's deffaces
  `(font-lock-number-face ((t (:foreground ,zenburn-Number-fg))))
@@ -234,14 +233,14 @@
  ;; auto-complete-mode
  `(ac-completion-face ((t (:foreground ,zenburn-NonText-fg))))
  `(ac-candidate-face ((t (:foreground ,zenburn-Pmenu-fg :background ,zenburn-Pmenu-bg))))
- `(ac-candidate-mouse-face ((t (:inherit unspecified :underline t)))) ; FIXME
+ `(ac-candidate-mouse-face ((t (:inherit unspecified :underline t))))
  `(ac-selection-face ((t (:foreground ,zenburn-PMenuSel-fg :background ,zenburn-PMenuSel-bg :weight bold))))
- `(ac-clang-candidate-face ((t (:inherit ac-candidate-face)))) ; FIXME
- `(ac-clang-selection-face ((t (:inherit ac-selection-face)))) ; FIXME
- `(ac-gtags-candidate-face ((t (:inherit ac-candidate-face)))) ; FIXME
- `(ac-gtags-selection-face ((t (:inherit ac-selection-face)))) ; FIXME
- `(ac-yasnippet-candidate-face ((t (:inherit ac-candidate-face)))) ; FIXME
- `(ac-yasnippet-selection-face ((t (:inherit ac-selection-face)))) ; FIXME
+ `(ac-clang-candidate-face ((t (:inherit ac-candidate-face))))
+ `(ac-clang-selection-face ((t (:inherit ac-selection-face))))
+ `(ac-gtags-candidate-face ((t (:inherit ac-candidate-face))))
+ `(ac-gtags-selection-face ((t (:inherit ac-selection-face))))
+ `(ac-yasnippet-candidate-face ((t (:inherit ac-candidate-face))))
+ `(ac-yasnippet-selection-face ((t (:inherit ac-selection-face))))
  `(popup-tip-face ((t (:foreground ,zenburn-Pmenu-fg :background ,zenburn-PMenuSel-bg))))
  `(popup-scroll-bar-foreground-face ((t (:background ,zenburn-PMenuThumb-bg))))
  `(popup-scroll-bar-background-face ((t (:background ,zenburn-PmenuSbar-bg))))
@@ -249,40 +248,40 @@
  ;; flyspell-mode
  `(flyspell-incorrect
    ((((supports :underline (:style wave)))
-     (:underline (:style wave :color ,zenburn-SpellBad-sp) :inherit unspecified))
-    (t (:underline t :inherit unspecified :foreground ,zenburn-SpellBad-fg))))
+     (:inherit unspecified :underline (:style wave :color ,zenburn-SpellBad-sp)))
+    (t (:inherit unspecified :underline t :foreground ,zenburn-SpellBad-fg))))
 
  `(flyspell-duplicate
    ((((supports :underline (:style wave)))
-     (:underline (:style wave :color ,zenburn-SpellLocal-sp) :inherit unspecified))
-    (t (:underline t :inherit unspecified :foreground ,zenburn-SpellLocal-fg))))
+     (:inherit unspecified :underline (:style wave :color ,zenburn-SpellLocal-sp)))
+    (t (:inherit unspecified :underline t :foreground ,zenburn-SpellLocal-fg))))
 
  ;; flymake-mode
  `(flymake-errline
    ((((supports :underline (:style wave)))
-     (:underline (:style wave :color ,zenburn-SpellBad-sp) :inherit unspecified))
-    (t (:underline t :inherit unspecified :foreground ,zenburn-SpellBad-fg))))
+     (:inherit unspecified :underline (:style wave :color ,zenburn-SpellBad-sp)))
+    (t (:inherit unspecified :underline t :foreground ,zenburn-SpellBad-fg))))
 
  `(flymake-warnline
    ((((supports :underline (:style wave)))
-     (:underline (:style wave :color ,zenburn-SpellRare-sp) :inherit unspecified))
-    (t (:underline t :inherit unspecified :foreground ,zenburn-SpellRare-fg))))
+     (:inherit unspecified :underline (:style wave :color ,zenburn-SpellRare-sp)))
+    (t (:inherit unspecified :underline t :foreground ,zenburn-SpellRare-fg))))
 
  `(flymake-infoline
    ((((supports :underline (:style wave)))
-     (:underline (:style wave :color ,zenburn-SpellLocal-sp) :inherit unspecified))
-    (t (:underline t :inherit unspecified :foreground ,zenburn-SpellLocal-fg))))
+     (:inherit unspecified :underline (:style wave :color ,zenburn-SpellLocal-sp)))
+    (t (:inherit unspecified :underline t :foreground ,zenburn-SpellLocal-fg))))
 
  ;; flycheck-mode
  `(flycheck-error
    ((((supports :underline (:style wave)))
-     (:underline (:style wave :color ,zenburn-SpellBad-sp) :inherit unspecified))
-    (t (:underline t :inherit unspecified :foreground ,zenburn-SpellBad-fg))))
+     (:inherit unspecified :underline (:style wave :color ,zenburn-SpellBad-sp)))
+    (t (:inherit unspecified :underline t :foreground ,zenburn-SpellBad-fg))))
 
  `(flycheck-warning
    ((((supports :underline (:style wave)))
-     (:underline (:style wave :color ,zenburn-SpellRare-sp) :inherit unspecified))
-    (t (:underline t :inherit unspecified :foreground ,zenburn-SpellRare-fg))))
+     (:inherit unspecified :underline (:style wave :color ,zenburn-SpellRare-sp)))
+    (t (:inherit unspecified :underline t :foreground ,zenburn-SpellRare-fg))))
 
  `(flycheck-fringe-error ((t (:foreground ,zenburn-SpellBad-fg :background ,zenburn-SignColumn-bg :weight bold))))
  `(flycheck-fringe-info ((t (:foreground ,zenburn-SpellLocal-fg :background ,zenburn-SignColumn-bg :weight bold))))
@@ -292,11 +291,10 @@
  `(diff-added ((t (:foreground ,zenburn-DiffAdd-fg :background ,zenburn-DiffAdd-bg))))
  `(diff-changed ((t (:foreground ,zenburn-DiffText-fg :background ,zenburn-DiffText-bg))))
  `(diff-removed ((t (:foreground ,zenburn-DiffDelete-fg :background ,zenburn-DiffDelete-bg))))
- `(diff-refine-added ((t (:inherit diff-added :weight bold))))
- `(diff-refine-change ((t (:inherit diff-changed :weight bold))))
- `(diff-refine-removed ((t (:inherit diff-removed :weight bold))))
- `(diff-header ((t (:foreground ,zenburn-DiffChange-fg :background ,zenburn-DiffChange-bg))))
- `(diff-file-header ((t (:inherit diff-header :weight bold)))))
+ `(diff-refine-added ((t (:inherit diff-added))))
+ `(diff-refine-change ((t (:inherit diff-changed))))
+ `(diff-refine-removed ((t (:inherit diff-removed))))
+ )
 
 (custom-theme-set-variables
  'zenburn-by-m4e5tr0))
