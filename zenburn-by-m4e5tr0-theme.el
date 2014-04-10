@@ -239,11 +239,18 @@
  `(ac-clang-selection-face ((t (:inherit ac-selection-face))))
  `(ac-gtags-candidate-face ((t (:inherit ac-candidate-face))))
  `(ac-gtags-selection-face ((t (:inherit ac-selection-face))))
+ `(ac-irony-candidate-face ((t (:inherit ac-candidate-face))))
+ `(ac-irony-selection-face ((t (:inherit ac-selection-face))))
  `(ac-yasnippet-candidate-face ((t (:inherit ac-candidate-face))))
  `(ac-yasnippet-selection-face ((t (:inherit ac-selection-face))))
+
+ ;; popup
  `(popup-tip-face ((t (:foreground ,zenburn-Pmenu-fg :background ,zenburn-PMenuSel-bg))))
  `(popup-scroll-bar-foreground-face ((t (:background ,zenburn-PMenuThumb-bg))))
  `(popup-scroll-bar-background-face ((t (:background ,zenburn-PmenuSbar-bg))))
+ ;; `(popup-menu-face ((t (:foreground ,zenburn-Pmenu-fg :background ,zenburn-Pmenu-bg))))
+ ;; `(popup-menu-mouse-face ((t (:inherit unspecified :underline t))))
+ ;; `(popup-menu-selection-face ((t (:foreground ,zenburn-PMenuSel-fg :background ,zenburn-PMenuSel-bg :weight bold))))
 
  ;; flyspell-mode
  `(flyspell-incorrect
