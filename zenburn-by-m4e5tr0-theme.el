@@ -127,7 +127,8 @@
  (zenburn-TabLine-bg "#222222") ; gui=bold
 
 ; Colors chosen by M4E5TR0
- (m4e5tr0-LineNrCur-bg "#2e2e2e") ; same as zenburn-MatchParen-bg
+ (m4e5tr0-LineNrCur-bg "#2e2e2e") ; zenburn-MatchParen-bg
+ (m4e5tr0-Mouse-bg "#afcfbf") ; zenburn-Cursor-bg + 202020
  (m4e5tr0-Header-bg "#3a3a39"))
   
 (custom-theme-set-faces
@@ -135,11 +136,11 @@
 
  `(default ((t (:foreground ,zenburn-Normal-fg :background ,zenburn-Normal-bg))))
  `(cursor ((t (:foreground ,zenburn-Cursor-fg :background ,zenburn-Cursor-bg :weight bold))))
- `(hl-line ((t (:background ,zenburn-CursorLine-bg))))
- `(col-highlight ((t (:background ,zenburn-CursorColumn-bg))))
- ;; `(highlight ((t ()))) ; TODO
- `(region ((t (:background ,zenburn-Visual-bg))))
- ;; `(secondary-selection ((t (:foreground ,zenburn-VisualNOS-fg :background ,zenburn-VisualNOS-bg)))) ; TODO
+ `(mouse ((t (:background ,m4e5tr0-Mouse-bg))))
+ `(hl-line ((t (:inherit unspecified :background ,zenburn-CursorLine-bg))))
+ `(col-highlight ((t (:inherit unspecified :background ,zenburn-CursorColumn-bg))))
+ `(region ((t (:inherit unspecified :background ,zenburn-Visual-bg))))
+ `(secondary-selection ((t (:inherit unspecified :foreground ,zenburn-VisualNOS-fg :background ,zenburn-VisualNOS-bg)))) ; FIXME
 
  `(mode-line ((t (:foreground ,zenburn-StatusLine-fg :background ,zenburn-StatusLine-bg :inverse-video t :box (:style released-button)))))
  `(mode-line-inactive ((t (:foreground ,zenburn-StatusLineNC-fg :background ,zenburn-StatusLineNC-bg :inverse-video t :box nil))))
@@ -161,10 +162,11 @@
  `(show-paren-match ((t (:foreground ,zenburn-MatchParen-fg :background ,zenburn-MatchParen-bg :weight bold))))
  `(show-paren-mismatch ((t (:foreground ,zenburn-VisualNOS-fg :background ,zenburn-VisualNOS-bg :weight bold))))
  `(completions-common-part ((t (:foreground ,zenburn-WildMenu-fg :background ,zenburn-WildMenu-bg))))
- `(completions-first-difference ((t (:inherit unspecified :weight bold))))
+ `(completions-first-difference ((t (:weight bold))))
 
  `(link ((t (:foreground ,zenburn-Number-fg :underline t))))
  `(link-visited ((t (:foreground ,zenburn-Float-fg :underline t))))
+ `(highlight ((t (:inherit unspecified :background ,zenburn-CursorColumn-bg :underline t)))) ; FIXME
 
  `(error ((t (:foreground ,zenburn-ErrorMsg-fg :background ,zenburn-ErrorMsg-bg :weight bold))))
  `(warning ((t (:foreground ,zenburn-WarningMsg-fg :background ,zenburn-WarningMsg-bg :weight bold))))
@@ -173,7 +175,7 @@
  `(nobreak-space ((t (:background ,zenburn-NonText-fg))))
  `(trailing-whitespace ((t (:background ,zenburn-VisualNOS-bg))))
 
- ;; font-lock-mode
+ ;; For font-lock-mode
  `(font-lock-builtin-face ((t (:foreground ,zenburn-Statement-fg))))
  `(font-lock-comment-face ((t (:foreground ,zenburn-Comment-fg :italic t))))
  `(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
@@ -192,37 +194,39 @@
  `(font-lock-variable-name-face ((t (:foreground ,zenburn-Identifier-fg))))
  `(font-lock-warning-face ((t (:foreground ,zenburn-SpellBad-fg)))) ; FIXME
 
+ ;; For python-mode
+ `(font-lock-number-face ((t (:foreground ,zenburn-Number-fg))))
+
+ ;; Face defined by m4e5tr0
+ `(font-lock-float-face ((t (:foreground ,zenburn-Float-fg))))
+
  `(dired-directory ((t (:foreground ,zenburn-Directory-fg :weight bold))))
 
- ;; tabbar-mode
+ ;; For tabbar package
  `(tabbar-default ((t (:foreground ,zenburn-TabLineFill-fg :background ,zenburn-TabLineFill-bg :weight bold))))
- `(tabbar-highlight ((t (:inherit unspecified :underline t))))
- `(tabbar-button ((t (:inherit tabbar-default :box nil)))) ; FIXME
- ;; `(tabbar-button-highlight ((t ()))) ; TODO
- `(tabbar-unselected ((t (:foreground ,zenburn-TabLine-fg :background ,zenburn-TabLine-bg :weight bold :box nil))))
- ;; `(tabbar-modified ((t ()))) ; TODO
- `(tabbar-selected ((t (:foreground ,zenburn-TabLineSel-fg :background ,zenburn-TabLineSel-bg :weight bold :box nil))))
  `(tabbar-separator ((t (:inherit tabbar-default))))
+ `(tabbar-unselected ((t (:foreground ,zenburn-TabLine-fg :background ,zenburn-TabLine-bg :weight bold :box nil))))
+ `(tabbar-selected ((t (:foreground ,zenburn-TabLineSel-fg :background ,zenburn-TabLineSel-bg :weight bold :box nil))))
+ ;; `(tabbar-modified ((t ()))) ; TODO
+ `(tabbar-highlight ((t (:inherit unspecified :underline t)))) ; FIXME
+ `(tabbar-button ((t (:inherit tabbar-default :box nil)))) ; FIXME
+ `(tabbar-button-highlight ((t (:inherit tabbar-unselected :box nil)))) ; FIXME
 
- ;; ido-mode
+ ;; For ido-mode
  `(ido-first-match ((t (:foreground ,zenburn-WildMenu-fg :background ,zenburn-WildMenu-bg))))
  ;; `(ido-only-match ((t ()))) ; TODO
  `(ido-subdir ((t (:foreground ,zenburn-Directory-fg :weight bold))))
 
- ;; m4e5tr0's deffaces
- `(font-lock-number-face ((t (:foreground ,zenburn-Number-fg))))
- `(font-lock-float-face ((t (:foreground ,zenburn-Float-fg))))
-
- ;; FIXME: mode name
+ ;; For fic-mode package
  `(font-lock-fic-face ((t (:foreground ,zenburn-Todo-fg :weight bold))))
 
- ;; FIXME: mode name
+ ;; For fixme-mode package
  `(font-lock-fixme-face ((t (:foreground ,zenburn-Todo-fg :weight bold))))
 
- ;; indent-guide-mode
+ ;; For indent-guide package
  `(indent-guide-face ((t (:foreground ,zenburn-NonText-fg))))
 
- ;; company-mode
+ ;; For company package
  `(company-preview ((t (:foreground ,zenburn-NonText-fg :weight bold))))
  `(company-preview-common ((t (:foreground ,zenburn-NonText-fg :weight normal))))
  `(company-tooltip ((t (:foreground ,zenburn-Pmenu-fg :background ,zenburn-Pmenu-bg :weight bold))))
@@ -230,10 +234,10 @@
  `(company-tooltip-selection ((t (:foreground ,zenburn-PMenuSel-fg :background ,zenburn-PMenuSel-bg :weight bold))))
  `(company-tooltip-common-selection ((t (:foreground ,zenburn-PMenuSel-fg :background ,zenburn-PMenuSel-bg :weight normal))))
 
- ;; auto-complete-mode
+ ;; For auto-complete package
  `(ac-completion-face ((t (:foreground ,zenburn-NonText-fg))))
  `(ac-candidate-face ((t (:foreground ,zenburn-Pmenu-fg :background ,zenburn-Pmenu-bg))))
- `(ac-candidate-mouse-face ((t (:inherit unspecified :underline t))))
+ `(ac-candidate-mouse-face ((t (:inherit unspecified :underline t)))) ; FIXME
  `(ac-selection-face ((t (:foreground ,zenburn-PMenuSel-fg :background ,zenburn-PMenuSel-bg :weight bold))))
  `(ac-clang-candidate-face ((t (:inherit ac-candidate-face))))
  `(ac-clang-selection-face ((t (:inherit ac-selection-face))))
@@ -244,15 +248,15 @@
  `(ac-yasnippet-candidate-face ((t (:inherit ac-candidate-face))))
  `(ac-yasnippet-selection-face ((t (:inherit ac-selection-face))))
 
- ;; popup
+ ;; For popup package
  `(popup-tip-face ((t (:foreground ,zenburn-Pmenu-fg :background ,zenburn-PMenuSel-bg))))
  `(popup-scroll-bar-foreground-face ((t (:background ,zenburn-PMenuThumb-bg))))
  `(popup-scroll-bar-background-face ((t (:background ,zenburn-PmenuSbar-bg))))
- ;; `(popup-menu-face ((t (:foreground ,zenburn-Pmenu-fg :background ,zenburn-Pmenu-bg))))
- ;; `(popup-menu-mouse-face ((t (:inherit unspecified :underline t))))
- ;; `(popup-menu-selection-face ((t (:foreground ,zenburn-PMenuSel-fg :background ,zenburn-PMenuSel-bg :weight bold))))
+ `(popup-menu-face ((t (:foreground ,zenburn-Pmenu-fg :background ,zenburn-Pmenu-bg))))
+ `(popup-menu-mouse-face ((t (:inherit unspecified :underline t)))) ; FIXME
+ `(popup-menu-selection-face ((t (:foreground ,zenburn-PMenuSel-fg :background ,zenburn-PMenuSel-bg :weight bold))))
 
- ;; flyspell-mode
+ ;; For flyspell package
  `(flyspell-incorrect
    ((((supports :underline (:style wave)))
      (:inherit unspecified :underline (:style wave :color ,zenburn-SpellBad-sp)))
@@ -263,7 +267,7 @@
      (:inherit unspecified :underline (:style wave :color ,zenburn-SpellLocal-sp)))
     (t (:inherit unspecified :underline t :foreground ,zenburn-SpellLocal-fg))))
 
- ;; flymake-mode
+ ;; For flymake package
  `(flymake-errline
    ((((supports :underline (:style wave)))
      (:inherit unspecified :underline (:style wave :color ,zenburn-SpellBad-sp)))
@@ -279,7 +283,7 @@
      (:inherit unspecified :underline (:style wave :color ,zenburn-SpellLocal-sp)))
     (t (:inherit unspecified :underline t :foreground ,zenburn-SpellLocal-fg))))
 
- ;; flycheck-mode
+ ;; For flycheck package
  `(flycheck-error
    ((((supports :underline (:style wave)))
      (:inherit unspecified :underline (:style wave :color ,zenburn-SpellBad-sp)))
@@ -294,7 +298,7 @@
  `(flycheck-fringe-info ((t (:foreground ,zenburn-SpellLocal-fg :background ,zenburn-SignColumn-bg :weight bold))))
  `(flycheck-fringe-warning ((t (:foreground ,zenburn-SpellRare-fg :background ,zenburn-SignColumn-bg :weight bold))))
 
- ;; diff-mode
+ ;; For diff
  `(diff-added ((t (:foreground ,zenburn-DiffAdd-fg :background ,zenburn-DiffAdd-bg))))
  `(diff-changed ((t (:foreground ,zenburn-DiffText-fg :background ,zenburn-DiffText-bg))))
  `(diff-removed ((t (:foreground ,zenburn-DiffDelete-fg :background ,zenburn-DiffDelete-bg))))
