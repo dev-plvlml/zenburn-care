@@ -15,22 +15,22 @@
  (zenburn-Comment-fg "#7f9f7f") ; gui=italic
  (zenburn-Conditional-fg "#f0dfaf") ; gui=bold
  (zenburn-Constant-fg "#dca3a3") ; gui=bold
- (zenburn-Cursor-fg "#000d18")
- (zenburn-Cursor-bg "#8faf9f") ; gui=bold
+ (zenburn-Cursor-fg "#000d18") ; gui=bold
+ (zenburn-Cursor-bg "#8faf9f")
  (zenburn-Debug-fg "#bca3a3") ; gui=bold
  (zenburn-Define-fg "#ffcfaf") ; gui=bold
  (zenburn-Delimiter-fg "#8f8f8f")
- (zenburn-DiffAdd-fg "#709080")
- (zenburn-DiffAdd-bg "#313c36") ; gui=bold
+ (zenburn-DiffAdd-fg "#709080") ; gui=bold
+ (zenburn-DiffAdd-bg "#313c36")
  (zenburn-DiffChange-fg "#dcdccc")
  (zenburn-DiffChange-bg "#333333")
  (zenburn-DiffDelete-fg "#333333")
  (zenburn-DiffDelete-bg "#464646")
- (zenburn-DiffText-fg "#ecbcbc")
- (zenburn-DiffText-bg "#41363c") ; gui=bold
+ (zenburn-DiffText-fg "#ecbcbc") ; gui=bold
+ (zenburn-DiffText-bg "#41363c")
  (zenburn-Directory-fg "#9fafaf") ; #dcdccc in original .vim; gui=bold
- (zenburn-ErrorMsg-fg "#80d4aa")
- (zenburn-ErrorMsg-bg "#2f2f2f") ; gui=bold
+ (zenburn-ErrorMsg-fg "#80d4aa") ; gui=bold
+ (zenburn-ErrorMsg-bg "#2f2f2f")
  (zenburn-Exception-fg "#c3bf9f") ; gui=bold
  (zenburn-Float-fg "#c0bed1")
  (zenburn-FoldColumn-fg "#93b3a3")
@@ -79,12 +79,12 @@
  (zenburn-Underlined-fg "#dcdccc") ; gui=underline
  (zenburn-VertSplit-fg "#2e3330") ; #303030 in original .vim
  (zenburn-VertSplit-bg "#688060")
- (zenburn-VisualNOS-fg "#333333")
- (zenburn-VisualNOS-bg "#f18c96") ; gui=bold, underline
- (zenburn-WarningMsg-fg "#ffffff")
- (zenburn-WarningMsg-bg "#333333") ; gui=bold
- (zenburn-WildMenu-fg "#cbecd0") ; #dca3a3 in original .vim
- (zenburn-WildMenu-bg "#2c302d") ; gui=underline
+ (zenburn-VisualNOS-fg "#333333") ; gui=bold, underline
+ (zenburn-VisualNOS-bg "#f18c96")
+ (zenburn-WarningMsg-fg "#ffffff") ; gui=bold
+ (zenburn-WarningMsg-bg "#333333")
+ (zenburn-WildMenu-fg "#cbecd0") ; #dca3a3 in original .vim ; gui=underline
+ (zenburn-WildMenu-bg "#2c302d")
 
 ; Additional colors in latest .vim
  (zenburn-SpellBad-fg "#dc8c6c")
@@ -100,35 +100,37 @@
  (zenburn-CursorColumn-bg "#4f4f4f")
  (zenburn-Pmenu-fg "#9f9f9f")
  (zenburn-Pmenu-bg "#2c2e2e")
- (zenburn-PMenuSel-fg "#d0d0a0")
- (zenburn-PMenuSel-bg "#242424") ; gui=bold
+ (zenburn-PMenuSel-fg "#d0d0a0") ; gui=bold
+ (zenburn-PMenuSel-bg "#242424")
  (zenburn-PmenuSbar-fg "#000000")
  (zenburn-PmenuSbar-bg "#2e3330")
  (zenburn-PMenuThumb-fg "#040404")
  (zenburn-PMenuThumb-bg "#a0afa0")
- (zenburn-MatchParen-fg "#b2b2a0")
- (zenburn-MatchParen-bg "#2e2e2e") ; gui=bold
- (zenburn-SignColumn-fg "#9fafaf")
- (zenburn-SignColumn-bg "#343434") ; gui=bold
- (zenburn-TabLineFill-fg "#cfcfaf")
- (zenburn-TabLineFill-bg "#353535") ; gui=bold
- (zenburn-TabLineSel-fg "#efefef")
- (zenburn-TabLineSel-bg "#3a3a39") ; gui=bold
- (zenburn-TabLine-fg "#b6bf98")
- (zenburn-TabLine-bg "#353535") ; gui=bold
+ (zenburn-MatchParen-fg "#b2b2a0") ; gui=bold
+ (zenburn-MatchParen-bg "#2e2e2e")
+ (zenburn-SignColumn-fg "#9fafaf") ; gui=bold
+ (zenburn-SignColumn-bg "#343434")
+ (zenburn-TabLineFill-fg "#cfcfaf") ; gui=bold
+ (zenburn-TabLineFill-bg "#353535")
+ (zenburn-TabLineSel-fg "#efefef") ; gui=bold
+ (zenburn-TabLineSel-bg "#3a3a39")
+ (zenburn-TabLine-fg "#b6bf98") ; gui=bold
+ (zenburn-TabLine-bg "#353535")
 
 ; Colors replacement in latest .vim
  (zenburn-Visual-bg "#2f2f2f")
- (zenburn-TabLineFill-fg "#dccdcc")
- (zenburn-TabLineFill-bg "#101010") ; gui=bold
- (zenburn-TabLineSel-fg "#f0f0b0")
- (zenburn-TabLineSel-bg "#333333") ; gui=bold
- (zenburn-TabLine-fg "#d0d0b8")
- (zenburn-TabLine-bg "#222222") ; gui=bold
+ (zenburn-TabLineFill-fg "#dccdcc") ; gui=bold
+ (zenburn-TabLineFill-bg "#101010")
+ (zenburn-TabLineSel-fg "#f0f0b0") ; gui=bold
+ (zenburn-TabLineSel-bg "#333333")
+ (zenburn-TabLine-fg "#d0d0b8") ; gui=bold
+ (zenburn-TabLine-bg "#222222")
 
 ; Colors chosen by M4E5TR0
+ (m4e5tr0-Mouse-bg "#dcdccc") ; zenburn-Normal-fg
  (m4e5tr0-LineNrCur-bg "#2e2e2e") ; zenburn-MatchParen-bg
- (m4e5tr0-Mouse-bg "#afcfbf") ; zenburn-Cursor-bg + 202020
+ (m4e5tr0-TabLineMod-fg "#ecbcbc") ; zenburn-DiffText-fg ; gui=bold
+ (m4e5tr0-TabLineMod-bg "#262224")
  (m4e5tr0-Header-bg "#3a3a39"))
   
 (custom-theme-set-faces
@@ -140,17 +142,17 @@
  `(hl-line ((t (:inherit unspecified :background ,zenburn-CursorLine-bg))))
  `(col-highlight ((t (:inherit unspecified :background ,zenburn-CursorColumn-bg))))
  `(region ((t (:inherit unspecified :background ,zenburn-Visual-bg))))
- `(secondary-selection ((t (:inherit unspecified :foreground ,zenburn-VisualNOS-fg :background ,zenburn-VisualNOS-bg)))) ; FIXME
+ `(secondary-selection ((t (:inherit unspecified :distant-foreground ,zenburn-VisualNOS-fg :background ,zenburn-VisualNOS-bg)))) ; FIXME
 
  `(mode-line ((t (:foreground ,zenburn-StatusLine-fg :background ,zenburn-StatusLine-bg :inverse-video t :box (:style released-button)))))
  `(mode-line-inactive ((t (:foreground ,zenburn-StatusLineNC-fg :background ,zenburn-StatusLineNC-bg :inverse-video t :box nil))))
  `(vertical-border ((t (:foreground ,zenburn-VertSplit-fg :background ,zenburn-VertSplit-bg :inverse-video t))))
- `(window-divider ((t (:inherit vertical-border))))
- `(window-divider-first-pixel ((t (:inherit vertical-border))))
- `(window-divider-last-pixel ((t (:inherit vertical-border))))
+ `(window-divider ((t (:foreground ,zenburn-VertSplit-fg))))
+ `(window-divider-first-pixel ((t (:foreground ,zenburn-VertSplit-fg))))
+ `(window-divider-last-pixel ((t (:foreground ,zenburn-VertSplit-fg))))
  `(header-line ((t (:background ,m4e5tr0-Header-bg :inverse-video nil))))
- `(linum ((t (:foreground ,zenburn-LineNr-fg :background ,zenburn-LineNr-bg :weight normal :slant normal :underline nil :box nil))))
- `(linum-highlight-face ((t (:foreground ,zenburn-LineNr-fg :background ,m4e5tr0-LineNrCur-bg :weight bold :slant normal :underline nil :box nil))))
+ `(linum ((t (:foreground ,zenburn-LineNr-fg :background ,zenburn-LineNr-bg :inverse-video nil :weight normal :slant normal :underline nil :box nil))))
+ `(linum-highlight-face ((t (:foreground ,zenburn-LineNr-fg :background ,m4e5tr0-LineNrCur-bg :inverse-video nil :weight bold :slant normal :underline nil :box nil))))
  `(fringe ((t (:foreground ,zenburn-SignColumn-fg :background ,zenburn-SignColumn-bg :weight bold))))
  `(minibuffer-prompt ((t (:foreground ,zenburn-Question-fg :weight bold))))
  `(scroll-bar ((t (:foreground ,m4e5tr0-LineNrCur-bg :background ,zenburn-LineNr-bg))))
@@ -166,7 +168,7 @@
 
  `(link ((t (:foreground ,zenburn-Number-fg :underline t))))
  `(link-visited ((t (:foreground ,zenburn-Float-fg :underline t))))
- `(highlight ((t (:inherit unspecified :background ,zenburn-CursorColumn-bg :underline t)))) ; FIXME
+ `(highlight ((t (:inherit unspecified :underline t)))) ; FIXME
 
  `(error ((t (:foreground ,zenburn-ErrorMsg-fg :background ,zenburn-ErrorMsg-bg :weight bold))))
  `(warning ((t (:foreground ,zenburn-WarningMsg-fg :background ,zenburn-WarningMsg-bg :weight bold))))
@@ -177,12 +179,12 @@
 
  ;; For font-lock-mode
  `(font-lock-builtin-face ((t (:foreground ,zenburn-Statement-fg))))
- `(font-lock-comment-face ((t (:foreground ,zenburn-Comment-fg :italic t))))
+ `(font-lock-comment-face ((t (:foreground ,zenburn-Comment-fg :slant italic))))
  `(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  `(font-lock-constant-face ((t (:foreground ,zenburn-Constant-fg :weight bold))))
  `(font-lock-reference-face ((t (:inherit font-lock-constant-face))))
- `(font-lock-doc-face ((t (:foreground ,zenburn-SpecialComment-fg :weight bold)))) ; FIXME
- `(font-lock-doc-string-face ((t (:foreground ,zenburn-SpecialChar-fg :weight bold)))) ; FIXME
+ `(font-lock-doc-face ((t (:foreground ,zenburn-String-fg :slant italic))))
+ `(font-lock-doc-string-face ((t (:inherit font-lock-doc-face))))
  `(font-lock-function-name-face ((t (:foreground ,zenburn-Function-fg))))
  `(font-lock-keyword-face ((t (:foreground ,zenburn-Keyword-fg :weight bold))))
  `(font-lock-negation-char-face ((t (:foreground ,zenburn-Operator-fg))))
@@ -200,6 +202,9 @@
  ;; Face defined by m4e5tr0
  `(font-lock-float-face ((t (:foreground ,zenburn-Float-fg))))
 
+ ;; For number-font-lock-mode package
+ `(number-font-lock-face ((t (:foreground ,zenburn-Number-fg))))
+ 
  `(dired-directory ((t (:foreground ,zenburn-Directory-fg :weight bold))))
 
  ;; For tabbar package
@@ -207,9 +212,9 @@
  `(tabbar-separator ((t (:inherit tabbar-default))))
  `(tabbar-unselected ((t (:foreground ,zenburn-TabLine-fg :background ,zenburn-TabLine-bg :weight bold :box nil))))
  `(tabbar-selected ((t (:foreground ,zenburn-TabLineSel-fg :background ,zenburn-TabLineSel-bg :weight bold :box nil))))
- ;; `(tabbar-modified ((t ()))) ; TODO
+ `(tabbar-modified ((t (:foreground ,m4e5tr0-TabLineMod-fg :background ,m4e5tr0-TabLineMod-bg :weight bold :box nil)))) ; FIXME
  `(tabbar-highlight ((t (:inherit unspecified :underline t)))) ; FIXME
- `(tabbar-button ((t (:inherit tabbar-default :box nil)))) ; FIXME
+ `(tabbar-button ((t (:inherit tabbar-default :box nil))))
  `(tabbar-button-highlight ((t (:inherit tabbar-unselected :box nil)))) ; FIXME
 
  ;; For ido-mode
@@ -237,7 +242,7 @@
  ;; For auto-complete package
  `(ac-completion-face ((t (:foreground ,zenburn-NonText-fg))))
  `(ac-candidate-face ((t (:foreground ,zenburn-Pmenu-fg :background ,zenburn-Pmenu-bg))))
- `(ac-candidate-mouse-face ((t (:inherit unspecified :underline t)))) ; FIXME
+ `(ac-candidate-mouse-face ((t (:inherit unspecified :foreground ,zenburn-PMenuSel-fg :weight bold)))) ; FIXME
  `(ac-selection-face ((t (:foreground ,zenburn-PMenuSel-fg :background ,zenburn-PMenuSel-bg :weight bold))))
  `(ac-clang-candidate-face ((t (:inherit ac-candidate-face))))
  `(ac-clang-selection-face ((t (:inherit ac-selection-face))))
@@ -253,7 +258,7 @@
  `(popup-scroll-bar-foreground-face ((t (:background ,zenburn-PMenuThumb-bg))))
  `(popup-scroll-bar-background-face ((t (:background ,zenburn-PmenuSbar-bg))))
  `(popup-menu-face ((t (:foreground ,zenburn-Pmenu-fg :background ,zenburn-Pmenu-bg))))
- `(popup-menu-mouse-face ((t (:inherit unspecified :underline t)))) ; FIXME
+ `(popup-menu-mouse-face ((t (:inherit unspecified :foreground ,zenburn-PMenuSel-fg :weight bold)))) ; FIXME
  `(popup-menu-selection-face ((t (:foreground ,zenburn-PMenuSel-fg :background ,zenburn-PMenuSel-bg :weight bold))))
 
  ;; For flyspell package

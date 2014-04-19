@@ -20,31 +20,25 @@ theme.wallpaper = "/usr/share/awesome/themes/zenburn/zenburn-background.png"
 theme.font      = "sans 8"
 
 -- {{{ Colors
--- theme.fg_normal  = "#DCDCCC"
 theme.fg_normal  = "#D0D0B8"
--- theme.fg_focus   = "#F0DFAF"
 theme.fg_focus   = "#F0F0B0"
-theme.fg_urgent  = "#CC9393"
--- theme.bg_normal  = "#3F3F3F"
+theme.fg_urgent  = "#ECBCBC"
 theme.bg_normal  = "#222222"
--- theme.bg_focus   = "#1E2320"
 theme.bg_focus   = "#333333"
-theme.bg_urgent  = "#3F3F3F"
--- theme.bg_systray = theme.bg_normal
+theme.bg_urgent  = "#262224"
 theme.bg_systray = "#101010"
 -- }}}
 
 -- {{{ Borders
 theme.border_width  = 2
--- theme.border_normal = "#3F3F3F"
-theme.border_normal = "#4F4F4F"
-theme.border_focus  = "#6F6F6F"
-theme.border_marked = "#CC9393"
+theme.border_normal = "#434443"
+theme.border_focus  = "#4f4f4f"
+theme.border_marked = "#CC9393" -- FIXME
 -- }}}
 
 -- {{{ Titlebars
-theme.titlebar_bg_focus  = "#3F3F3F"
-theme.titlebar_bg_normal = "#3F3F3F"
+theme.titlebar_bg_focus  = theme.bg_focus
+theme.titlebar_bg_normal = theme.bg_normal
 -- }}}
 
 -- There are other variable sets
@@ -69,7 +63,7 @@ theme.titlebar_bg_normal = "#3F3F3F"
 -- }}}
 
 -- {{{ Mouse finder
-theme.mouse_finder_color = "#CC9393"
+theme.mouse_finder_color = "#CC9393" -- FIXME
 -- mouse_finder_[timeout|animate_timeout|radius|factor]
 -- }}}
 
@@ -78,7 +72,6 @@ theme.mouse_finder_color = "#CC9393"
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
 theme.menu_height = 15
--- theme.menu_width = 100
 theme.menu_width  = 120
 theme.menu_fg_normal = "#9F9F9F"
 theme.menu_fg_focus = "#D0D0A0"
