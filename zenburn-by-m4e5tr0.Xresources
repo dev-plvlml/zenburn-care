@@ -45,8 +45,6 @@
 !*color11: #efdcbc
 ! Label
 !*color11: #dfcfaf
-! Special
-!*color11: #cfbfaf
 ! Statement
 !*color11: #e3ceab
 
@@ -87,6 +85,8 @@
 !*color7: #dfe4cf
 ! Operator
 !*color15: #f0efd0
+! Special
+!*color11: #cfbfaf
 ! Todo
 !*color7: #dfdfdf
 ! Title
