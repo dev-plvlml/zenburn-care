@@ -9,7 +9,7 @@
 
 (let ((class '((class color)(min-colors 89)))
 
-; Original zenburn palette
+; Original colors
  (zenburn-Boolean-fg "#dca3a3")
  (zenburn-Character-fg "#dca3a3") ; gui=bold
  (zenburn-Comment-fg "#7f9f7f") ; gui=italic
@@ -39,8 +39,8 @@
  (zenburn-Folded-bg "#3f4040")
  (zenburn-Function-fg "#efef8f")
  (zenburn-Identifier-fg "#efdcbc")
- (zenburn-IncSearch-fg "#385f38")
- (zenburn-IncSearch-bg "#f8f893")
+ (zenburn-IncSearch-fg "#f8f893") ; #385f38 in original .vim
+ (zenburn-IncSearch-bg "#385f38") ; #f8f893 in original .vim
  (zenburn-Keyword-fg "#f0dfaf") ; gui=bold
  (zenburn-Label-fg "#dfcfaf") ; gui=underline
  (zenburn-LineNr-fg "#9fafaf")
@@ -86,7 +86,7 @@
  (zenburn-WildMenu-fg "#cbecd0") ; #dca3a3 in original .vim ; gui=underline
  (zenburn-WildMenu-bg "#2c302d")
 
-; Additional colors in latest .vim
+; Additional colors
  (zenburn-SpellBad-fg "#dc8c6c")
  (zenburn-SpellBad-sp "#bc6c4c")
  (zenburn-SpellCap-fg "#8c8cbc")
@@ -95,7 +95,6 @@
  (zenburn-SpellRare-sp "#bc6c9c")
  (zenburn-SpellLocal-fg "#9ccc9c")
  (zenburn-SpellLocal-sp "#7cac7c")
- ;; (zenburn-Visual-bg "#233323")
  (zenburn-CursorLine-bg "#434443")
  (zenburn-CursorColumn-bg "#4f4f4f")
  (zenburn-Pmenu-fg "#9f9f9f")
@@ -110,15 +109,10 @@
  (zenburn-MatchParen-bg "#2e2e2e")
  (zenburn-SignColumn-fg "#9fafaf") ; gui=bold
  (zenburn-SignColumn-bg "#343434")
- ;; (zenburn-TabLineFill-fg "#cfcfaf") ; gui=bold
- ;; (zenburn-TabLineFill-bg "#353535")
- ;; (zenburn-TabLineSel-fg "#efefef") ; gui=bold
- ;; (zenburn-TabLineSel-bg "#3a3a39")
- ;; (zenburn-TabLine-fg "#b6bf98") ; gui=bold
- ;; (zenburn-TabLine-bg "#353535")
-
-; Colors replacement in latest .vim
+ (zenburn-ColorColumn-bg "#484848")
  (zenburn-Visual-bg "#2f2f2f")
+ (zenburn-Error-fg "#e37170")
+ (zenburn-Error-bg "#3d3535")
  (zenburn-TabLineFill-fg "#dccdcc") ; gui=bold
  (zenburn-TabLineFill-bg "#101010")
  (zenburn-TabLineSel-fg "#f0f0b0") ; gui=bold
@@ -126,13 +120,15 @@
  (zenburn-TabLine-fg "#d0d0b8") ; gui=bold
  (zenburn-TabLine-bg "#222222")
 
+; Colors preferred by Slinky
+ (slinky-Visual-bg "#233323")
+
 ; Colors chosen by M4E5TR0
- (m4e5tr0-OldVisual-bg "#233323") ; zenburn-Visual-bg additional color in latest .vim
  (m4e5tr0-Mouse-bg "#dcdccc") ; zenburn-Normal-fg
  (m4e5tr0-LineNrCur-bg "#2e2e2e") ; zenburn-MatchParen-bg
- (m4e5tr0-TabLineMod-fg "#ecbcbc") ; zenburn-DiffText-fg ; gui=bold
- (m4e5tr0-TabLineMod-bg "#262224")
- (m4e5tr0-Header-bg "#3a3a39"))
+ (m4e5tr0-TabLineMod-fg "#e89393") ; zenburn-Tag-fg ; FIXME
+ (m4e5tr0-TabLineMod-bg "#262224") ; FIXME
+ (m4e5tr0-Header-bg "#3a3a39")) ; OK
 
 (custom-theme-set-faces
  'zenburn-by-m4e5tr0
@@ -143,7 +139,7 @@
  `(hl-line ((t (:background ,zenburn-CursorLine-bg))))
  `(col-highlight ((t (:background ,zenburn-CursorColumn-bg))))
  `(region ((t (:background ,zenburn-Visual-bg))))
- `(secondary-selection ((t (:background ,m4e5tr0-OldVisual-bg))))
+ `(secondary-selection ((t (:background ,slinky-Visual-bg))))
 
  `(mode-line ((t (:foreground ,zenburn-StatusLine-fg :background ,zenburn-StatusLine-bg :inverse-video t :box (:style released-button)))))
  `(mode-line-inactive ((t (:foreground ,zenburn-StatusLineNC-fg :background ,zenburn-StatusLineNC-bg :inverse-video t :box nil))))
@@ -159,12 +155,12 @@
  `(scroll-bar ((t (:foreground ,m4e5tr0-LineNrCur-bg :background ,zenburn-LineNr-bg))))
 
  `(match ((t (:foreground ,zenburn-WildMenu-fg :background ,zenburn-WildMenu-bg)))) ; FIXME
- `(isearch ((t (:foreground ,zenburn-IncSearch-fg :background ,zenburn-IncSearch-bg :inverse-video t))))
- `(isearch-fail ((t (:foreground ,zenburn-VisualNOS-fg :background ,zenburn-VisualNOS-bg :weight bold))))
- `(query-replace ((t (:foreground ,zenburn-IncSearch-fg :background ,zenburn-IncSearch-bg :inverse-video t))))
+ `(isearch ((t (:foreground ,zenburn-IncSearch-fg :background ,zenburn-IncSearch-bg))))
+ `(isearch-fail ((t (:foreground ,zenburn-Error-fg :background ,zenburn-Error-bg :weight bold))))
+ `(query-replace ((t (:foreground ,zenburn-IncSearch-fg :background ,zenburn-IncSearch-bg))))
  `(lazy-highlight ((t (:foreground ,zenburn-Search-fg :background ,zenburn-Search-bg))))
  `(show-paren-match ((t (:foreground ,zenburn-MatchParen-fg :background ,zenburn-MatchParen-bg :weight bold))))
- `(show-paren-mismatch ((t (:foreground ,zenburn-VisualNOS-fg :background ,zenburn-VisualNOS-bg :weight bold))))
+ `(show-paren-mismatch ((t (:foreground ,zenburn-Error-fg :background ,zenburn-Error-bg :weight bold))))
  `(completions-common-part ((t (:foreground ,zenburn-WildMenu-fg :background ,zenburn-WildMenu-bg))))
  `(completions-first-difference ((t (:weight bold))))
 
@@ -175,7 +171,7 @@
  `(error ((t (:foreground ,zenburn-ErrorMsg-fg :background ,zenburn-ErrorMsg-bg :weight bold)))) ; FIXME
  `(warning ((t (:foreground ,zenburn-WarningMsg-fg :background ,zenburn-WarningMsg-bg :weight bold)))) ; FIXME
 
- `(escape-glyph ((t (:foreground ,zenburn-NonText-fg))))
+ `(escape-glyph ((t (:foreground ,zenburn-SpecialKey-fg))))
  `(nobreak-space ((t (:background ,zenburn-NonText-fg))))
  `(trailing-whitespace ((t (:background ,zenburn-NonText-fg))))
 
@@ -196,7 +192,7 @@
  `(font-lock-string-face ((t (:foreground ,zenburn-String-fg))))
  `(font-lock-type-face ((t (:foreground ,zenburn-Type-fg :weight bold))))
  `(font-lock-variable-name-face ((t (:foreground ,zenburn-Identifier-fg))))
- `(font-lock-warning-face ((t (:foreground ,zenburn-SpellBad-fg)))) ; FIXME
+ `(font-lock-warning-face ((t (:foreground ,zenburn-Error-fg)))) ; FIXME
 
  ;; For python-mode
  `(font-lock-number-face ((t (:foreground ,zenburn-Number-fg))))
@@ -206,17 +202,26 @@
 
  ;; For number-font-lock-mode package
  `(number-font-lock-face ((t (:foreground ,zenburn-Number-fg))))
- 
- `(dired-directory ((t (:foreground ,zenburn-Directory-fg :weight bold))))
+
+ ;; For dired
+ `(dired-directory ((t (:foreground ,zenburn-Float-fg :weight bold))))
+ ;; `(dired-flagged ((t ()))) ; TODO
+ ;; `(dired-header ((t ()))) ; TODO
+ ;; `(dired-ignored ((t ()))) ; TODO
+ ;; `(dired-mark ((t ()))) ; TODO
+ ;; `(dired-marked ((t ()))) ; TODO
+ ;; `(dired-perm-write ((t ()))) ; TODO
+ `(dired-symlink ((t (:foreground ,zenburn-Number-fg :weight bold))))
+ ;; `(dired-warning ((t ()))) ; TODO
 
  ;; For yasnippet package
  ;; `(yas-field-highlight-face ((t ()))) ; TODO
- 
+
  ;; For smartparens package
  `(sp-pair-overlay-face ((t (:inherit unspecified)))) ; FIXME
  `(sp-show-pair-match-face ((t (:inherit show-paren-match))))
  `(sp-show-pair-mismatch-face ((t (:inherit show-paren-mismatch))))
- 
+
  ;; For tabbar package
  `(tabbar-default ((t (:foreground ,zenburn-TabLineFill-fg :background ,zenburn-TabLineFill-bg :weight bold))))
  `(tabbar-separator ((t (:inherit tabbar-default))))
@@ -227,10 +232,16 @@
  `(tabbar-button ((t (:inherit tabbar-default :box nil))))
  `(tabbar-button-highlight ((t (:foreground ,zenburn-TabLineSel-fg :background ,zenburn-TabLine-bg :box nil))))
 
+ ;; For icomplete-mode
+ ;; `(icomplete-first-match ((t ()))) ; TODO
+ 
  ;; For ido-mode
  ;; `(ido-first-match ((t ()))) ; TODO
+ ;; `(ido-incomplete-regexp ((t ()))) ; TODO
+ ;; `(ido-indicator ((t ()))) ; TODO
  ;; `(ido-only-match ((t ()))) ; TODO
  `(ido-subdir ((t (:foreground ,zenburn-Directory-fg :weight bold))))
+ ;; `(ido-virtual ((t ()))) ; TODO
 
  ;; For fic-mode package
  `(font-lock-fic-face ((t (:foreground ,zenburn-Todo-fg :weight bold))))
