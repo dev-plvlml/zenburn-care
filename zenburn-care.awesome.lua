@@ -1,12 +1,18 @@
----------------------------------
--- "Zenburn" awesome theme mod --
---   By M4E5TR0                --
----------------------------------
--- based on "Zenburn" theme    --
---   by Adrian C. (anrxc)      --
--- and on "Zenburn" vim theme  --
---   by Jani Nurminen (slinky) --
----------------------------------
+--------------------------------------------------------------
+-- Zenburn color scheme for Vim ported to Awesome WM with care
+--   by Pavel Matcula (M4E5TR0) <dev.plvlml@gmail.com>
+
+-- Copyright (c) 2014 Pavel Matcula
+
+-- URL: https://github.com/dev-plvlml/zenburn-care
+--------------------------------------------------------------
+-- A fork of "Zenburn" awesome theme      --
+--   by Adrian C. (anrxc)                 --
+-- based on "Zenburn" vim theme           --
+--   by Jani Nurminen (slinky)            --
+-- Original URL:                          --
+--  * https://github.com/jnurmine/zenburn --
+--------------------------------------------
 
 -- Alternative icon sets and widget icons:
 --  * http://awesome.naquadah.org/wiki/Nice_Icons
@@ -22,11 +28,10 @@ theme.font      = "sans 8"
 -- {{{ Colors
 theme.fg_normal  = "#D0D0B8"
 theme.fg_focus   = "#F0F0B0"
--- theme.fg_urgent  = "#ECBCBC"
-theme.fg_urgent  = "#E89393"
+theme.fg_urgent  = "#E0C0C0" -- FIXME
 theme.bg_normal  = "#222222"
 theme.bg_focus   = "#333333"
-theme.bg_urgent  = "#262224"
+theme.bg_urgent  = "#262224" -- FIXME
 theme.bg_systray = "#101010"
 -- }}}
 
@@ -34,7 +39,8 @@ theme.bg_systray = "#101010"
 theme.border_width  = 2
 theme.border_normal = "#434443"
 theme.border_focus  = "#4f4f4f"
-theme.border_marked = "#CC9393" -- FIXME
+-- theme.border_marked = "#CC9393"
+theme.border_marked = "#BCA3A3" -- FIXME
 -- }}}
 
 -- {{{ Titlebars
@@ -64,7 +70,8 @@ theme.titlebar_bg_normal = theme.bg_normal
 -- }}}
 
 -- {{{ Mouse finder
-theme.mouse_finder_color = "#CC9393" -- FIXME
+-- theme.mouse_finder_color = "#CC9393"
+theme.mouse_finder_color = "#BCA3A3" -- FIXME
 -- mouse_finder_[timeout|animate_timeout|radius|factor]
 -- }}}
 

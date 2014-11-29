@@ -1,4 +1,12 @@
-!! Vim Zenburn theme ported by M4E5TR0.
+!! Zenburn color scheme for Vim ported with care
+
+!! Copyright (c) 2014 Pavel Matcula
+
+!! Author: Pavel Matcula (M4E5TR0) <dev.plvlml@gmail.com>
+!! URL: https://github.com/dev-plvlml/zenburn-care
+
+!! Original author: Jani Nurminen (slinky)
+!! Original URL: https://github.com/jnurmine/zenburn
 
 !! Default colors
 ! Normal
@@ -9,66 +17,46 @@
 *cursorColor: #8faf9f
 
 !! Black color
-! Awesome
-*color0: #1e2320
+! Visual
+*color0: #2f2f2f
 ! Normal
-*color8: #3f3f3f
+!*color0: #3f3f3f
+! NonText
+*color8: #5b605e
+! Ignore
+!*color8: #545a4f
 
 !! Red color
 ! PreCondit
 *color1: #dfaf8f
 ! Define, Macro, ModeMsg, PreProc
 *color9: #ffcfaf
-! Repeat
-!*color9: #ffd7a7
 
 !! Green color
 ! Comment
 *color2: #7f9f7f
-! SpecialComment
-!*color2: #82a282
 ! SpecialKey
 *color10: #9ece9e
 
 !! Brown / yellow color
-! Exception, StorageClass
-!*color3: #c3bf9f
 ! Function -20
 *color3: #cfcf6f
 ! Function
 *color11: #efef8f
-! Structure
-!*color11: #efefaf
-! Conditional, Keyword
-!*color11: #f0dfaf
-! Identifier
-!*color11: #efdcbc
-! Label
-!*color11: #dfcfaf
-! Statement
-!*color11: #e3ceab
 
 !! Blue color
 ! Float -20
 *color4: #a09eb1
 ! Float
 *color12: #c0bed1
-! Directory
-!*color4: #9fafaf
-! Directory +20
-!*color12: #bfcfcf
 
 !! Magenta color
 ! Boolean, Character, Constant, SpecialChar -20
 *color5: #bc8383
 ! String
 !*color5: #cc9393
-! Debug
-!*color5: #bca3a3
 ! Boolean, Character, Constant, SpecialChar
 *color13: #dca3a3
-! Tag
-!*color13: #e89393
 
 !! Cyan color
 ! Number -20
@@ -77,19 +65,7 @@
 *color14: #8cd0d3
 
 !! White color
-! DiffChange, Directory, Underlined
+! Normal, Underlined
 *color7: #dcdccc
-! Type
-!*color7: #dfdfbf
-! Typedef
-!*color7: #dfe4cf
-! Operator
-!*color15: #f0efd0
-! Special
-!*color11: #cfbfaf
-! Todo
-!*color7: #dfdfdf
-! Title
-!*color15: #efefef
-! MoreMsg, Question, Warning
+! MoreMsg, Question
 *color15: #ffffff
