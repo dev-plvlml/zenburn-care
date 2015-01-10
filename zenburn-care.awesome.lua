@@ -1,6 +1,6 @@
 --------------------------------------------------------------
 -- Zenburn color scheme for Vim ported to Awesome WM with care
---   by Pavel Matcula (M4E5TR0) <dev.plvlml@gmail.com>
+--   by Pavel Matcula (M4E5TR0) <dev dot plvlml at google mail>
 
 -- Copyright (c) 2014 Pavel Matcula
 
@@ -19,43 +19,79 @@
 
 -- {{{ Main
 theme = {}
-theme.wallpaper = "/usr/share/awesome/themes/zenburn/zenburn-background.png"
 -- }}}
 
 -- {{{ Styles
-theme.font      = "sans 8"
+theme.font = "sans 8"
 
 -- {{{ Colors
-theme.fg_normal  = "#D0D0B8"
-theme.fg_focus   = "#F0F0B0"
-theme.fg_urgent  = "#E0C0C0" -- FIXME
-theme.bg_normal  = "#222222"
-theme.bg_focus   = "#333333"
-theme.bg_urgent  = "#262224" -- FIXME
-theme.bg_systray = "#101010"
+theme.fg_normal   = "#D0D0B8"
+theme.fg_focus    = "#F0F0B0"
+theme.fg_urgent   = "#ECBCBC"	-- FIXME
+theme.fg_minimize = "#DCCDCC"
+
+theme.bg_normal   = "#222222"
+theme.bg_focus    = "#333333"
+theme.bg_urgent   = "#222222"	-- FIXME
+theme.bg_minimize = "#101010"
+theme.bg_systray  = "#101010"
 -- }}}
 
 -- {{{ Borders
 theme.border_width  = 2
 theme.border_normal = "#434443"
 theme.border_focus  = "#4f4f4f"
--- theme.border_marked = "#CC9393"
-theme.border_marked = "#BCA3A3" -- FIXME
--- }}}
-
--- {{{ Titlebars
-theme.titlebar_bg_focus  = theme.bg_focus
-theme.titlebar_bg_normal = theme.bg_normal
+--theme.border_marked = "#CC9393"
+theme.border_marked = "#BCA3A3"	-- FIXME
 -- }}}
 
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
--- [taglist|tasklist]_[bg|fg]_[focus|urgent]
--- titlebar_[normal|focus]
+-- tasklist_[bg|fg]_[focus|urgent]
+-- }}}
+
+-- {{{ Taglist
+-- taglist_[bg|fg]_[focus|urgent|occupied|empty]
+--theme.taglist_fg_empty = "#DCCDCC"
+--theme.taglist_bg_empty = "#101010"
+-- }}}
+
+-- {{{ Titlebars
+-- titlebar_[bg|fg]_[normal|focus]
+--theme.titlebar_fg_normal = "#" -- TODO
+--theme.titlebar_fg_focus  = "#" -- TODO
+--theme.titlebar_bg_normal = "#" -- TODO
+--theme.titlebar_bg_focus  = "#" -- TODO
+-- }}}
+
+-- {{{ Tooltips
 -- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
--- Example:
---theme.taglist_bg_focus = "#CC9393"
+theme.tooltip_font = "sans 8 italic" -- FIXME
+theme.tooltip_fg_color = "#9F9F9F"
+theme.tooltip_bg_color = "#2C2E2E"
+theme.tooltip_border_width = 2
+theme.tooltip_border_color = "#2E3330"
+-- }}}
+
+-- {{{ Mouse finder
+-- mouse_finder_[timeout|animate_timeout|radius|factor]
+--theme.mouse_finder_color = "#CC9393"
+theme.mouse_finder_color = "#BCA3A3" -- FIXME
+-- }}}
+
+-- {{{ Menu
+-- Variables set for theming the menu:
+-- menu_[bg|fg]_[normal|focus]
+-- menu_[border_color|border_width]
+theme.menu_height = 15
+theme.menu_width  = 120
+theme.menu_fg_normal = "#9F9F9F"
+theme.menu_fg_focus  = "#D0D0A0"
+theme.menu_bg_normal = "#2C2E2E"
+theme.menu_bg_focus  = "#242424"
+theme.menu_border_width = 2
+theme.menu_border_color = "#2E3330"
 -- }}}
 
 -- {{{ Widgets
@@ -69,35 +105,18 @@ theme.titlebar_bg_normal = theme.bg_normal
 --theme.border_widget    = "#3F3F3F"
 -- }}}
 
--- {{{ Mouse finder
--- theme.mouse_finder_color = "#CC9393"
-theme.mouse_finder_color = "#BCA3A3" -- FIXME
--- mouse_finder_[timeout|animate_timeout|radius|factor]
+-- {{{ Icons
+-- {{{ Main
+theme.awesome_icon = "/usr/share/awesome/themes/zenburn/awesome-icon.png"
 -- }}}
 
 -- {{{ Menu
--- Variables set for theming the menu:
--- menu_[bg|fg]_[normal|focus]
--- menu_[border_color|border_width]
-theme.menu_height = 15
-theme.menu_width  = 120
-theme.menu_fg_normal = "#9F9F9F"
-theme.menu_fg_focus = "#D0D0A0"
-theme.menu_bg_normal = "#2C2E2E"
-theme.menu_bg_focus = "#242424"
-theme.menu_border_color = theme.menu_bg_normal
+theme.menu_submenu_icon = "/usr/share/awesome/themes/default/submenu.png"
 -- }}}
 
--- {{{ Icons
 -- {{{ Taglist
 theme.taglist_squares_sel   = "/usr/share/awesome/themes/zenburn/taglist/squarefz.png"
 theme.taglist_squares_unsel = "/usr/share/awesome/themes/zenburn/taglist/squarez.png"
---theme.taglist_squares_resize = "false"
--- }}}
-
--- {{{ Misc
-theme.awesome_icon           = "/usr/share/awesome/themes/zenburn/awesome-icon.png"
-theme.menu_submenu_icon      = "/usr/share/awesome/themes/default/submenu.png"
 -- }}}
 
 -- {{{ Layout

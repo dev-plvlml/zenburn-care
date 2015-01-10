@@ -2,10 +2,10 @@
 
 !! Copyright (c) 2014 Pavel Matcula
 
-!! Author: Pavel Matcula (M4E5TR0) <dev.plvlml@gmail.com>
+!! Author: Pavel Matcula (M4E5TR0) <dev dot plvlml at google mail>
 !! URL: https://github.com/dev-plvlml/zenburn-care
 
-!! Original author: Jani Nurminen (slinky)
+!! Original author: Jani Nurminen (slinky) <slinky at iki dot fi>
 !! Original URL: https://github.com/jnurmine/zenburn
 
 !! Default colors
@@ -39,10 +39,14 @@
 *color10: #9ece9e
 
 !! Brown / yellow color
+! Structure -20
+*color3: #cfcf8f
 ! Function -20
-*color3: #cfcf6f
+!*color3: #cfcf6f
+! Structure
+*color11: #efefaf
 ! Function
-*color11: #efef8f
+!*color11: #efef8f
 
 !! Blue color
 ! Float -20
@@ -55,6 +59,8 @@
 *color5: #bc8383
 ! String
 !*color5: #cc9393
+! String
+!*color13: #cc9393
 ! Boolean, Character, Constant, SpecialChar
 *color13: #dca3a3
 
