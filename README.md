@@ -9,4 +9,4 @@ zenburn-care is a repository containing [Zenburn color scheme for Vim](https://g
 3. Xterm, Urxvt, etc. (from scratch with care) - complete
 4. Awesome WM (forked with care) - work in progress
 5. CLion (from scratch with care) - coming soon
-6. Qt Creator (from scratch with care) - coming soon
+6. Qt Creator (from scratch with care) - work in progress

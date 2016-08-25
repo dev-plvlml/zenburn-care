@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme version="1.0" name="zenburn-care">
+  <style name="Text" foreground="#dcdccc" background="#3f3f3f"/>
+  <style name="Link" foreground="#cbecd0" background="#2c302d" underlineStyle="SingleUnderline"/>
+  <!-- <style name="Selection" background="#233323"/> -->  <!-- TESTME -->
+  <style name="Selection" background="#2f2f2f"/>
+  <style name="LineNumber" foreground="#9fafaf" background="#262626"/>
+  <style name="SearchResult" foreground="#ffffe0" background="#284f28"/>
+  <!-- <style name="SearchScope" background="#2f2f2f"/> -->  <!-- TESTME -->
+  <style name="SearchScope" background="#233323"/>
+  <style name="Parentheses" foreground="#b2b2a0" background="#2e2e2e" bold="true"/>
+  <style name="ParenthesesMismatch" foreground="#e37170" background="#3d3535" bold="true"/>
+  <style name="CurrentLine" background="#434443"/>
+  <style name="CurrentLineNumber" foreground="#d2d39b" background="#262626"/>
+  <style name="Occurrences" foreground="#cbecd0" background="#2c302d"/>  <!-- FIXME -->
+  <style name="Occurrences.Unused" foreground="#808000"/>  <!-- TODO -->
+  <style name="Occurrences.Rename" foreground="#cbecd0" background="#2c302d"/>  <!-- FIXME -->
+  <style name="Number" foreground="#8cd0d3"/>
+  <style name="String" foreground="#cc9393"/>
+  <style name="Type" foreground="#dfdfbf" bold="true"/>
+  <style name="Local" foreground="#efdcbc"/>
+  <style name="Field" foreground="#efdcbc"/>
+  <style name="Static" foreground="#dca3a3" bold="true"/>
+  <style name="VirtualMethod" foreground="#efef8f" italic="true"/>
+  <style name="Function" foreground="#efef8f"/>
+  <style name="Keyword" foreground="#f0dfaf" bold="true"/>
+  <style name="PrimitiveType" foreground="#dfdfbf" bold="true"/>  <!-- TESTME -->
+  <style name="Operator" foreground="#f0efd0"/>
+  <style name="Preprocessor" foreground="#ffcfaf" bold="true"/>
+  <style name="Label" foreground="#dfcfaf" underlineStyle="SingleUnderline"/>
+  <style name="Comment" foreground="#7f9f7f" italic="true"/>
+  <style name="Doxygen.Comment" foreground="#7f9f7f"/>
+  <style name="Doxygen.Tag" foreground="#82a282" bold="true"/>
+  <!-- <style name="VisualWhitespace" background="#444444"/> -->
+  <style name="QmlLocalId" italic="true"/>  <!-- TODO -->
+  <style name="QmlExternalId" foreground="#aaaaff" italic="true"/>  <!-- TODO -->
+  <style name="QmlTypeId" foreground="#ff8bff"/>  <!-- TODO -->
+  <style name="QmlRootObjectProperty" italic="true"/>  <!-- TODO -->
+  <style name="QmlScopeObjectProperty" italic="true"/>  <!-- TODO -->
+  <style name="QmlExternalObjectProperty" foreground="#aaaaff" italic="true"/>  <!-- TODO -->
+  <style name="JsScopeVar" foreground="#8888ff" italic="true"/>  <!-- TODO -->
+  <style name="JsImportVar" foreground="#8888ff" italic="true"/>  <!-- TODO -->
+  <style name="JsGlobalVar" foreground="#8888ff" italic="true"/>  <!-- TODO -->
+  <style name="QmlStateName" italic="true"/>  <!-- TODO -->
+  <style name="Binding" foreground="#ff5555"/>  <!-- TODO -->
+  <style name="DisabledCode" foreground="#545a4f"/>
+  <style name="AddedLine" foreground="#709080" background="#313c36" bold="true"/>
+  <style name="RemovedLine" foreground="#333333" background="#464646"/>
+  <style name="DiffFile" foreground="#efefef" background="#393939" bold="true"/>  <!-- TESTME -->
+  <style name="DiffLocation" foreground="#dcdccc" background="#333333"/>
+  <style name="DiffFileLine" foreground="#efefef" background="#393939" bold="true"/>  <!-- TESTME -->
+  <style name="DiffContextLine" foreground="#404040" background="#97bac7"/>  <!-- TODO -->
+  <style name="DiffSourceLine" foreground="#333333" background="#464646"/>
+  <style name="DiffSourceChar" foreground="#ecbcbc" background="#41363c" bold="true"/>
+  <style name="DiffDestLine" foreground="#709080" background="#313c36" bold="true"/>
+  <style name="DiffDestChar" foreground="#ecbcbc" background="#41363c" bold="true"/>
+  <style name="LogChangeLine" foreground="#dcdc00"/>  <!-- TODO -->
+  <style name="Warning" underlineColor="#bc6c9c" underlineStyle="WaveUnderline"/>
+  <style name="WarningContext" underlineColor="#bc6c9c" underlineStyle="DotLine"/>
+  <style name="Error" underlineColor="#bc6c4c" underlineStyle="WaveUnderline"/>
+  <style name="ErrorContext" underlineColor="#bc6c4c" underlineStyle="DotLine"/>
+  <style name="LastStyleSentinel" foreground="#ffcfaf" bold="true"/>  <!-- TODO -->
+</style-scheme>
