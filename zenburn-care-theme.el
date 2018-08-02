@@ -1,6 +1,6 @@
 ;;; package --- Zenburn color scheme for Vim ported to Emacs with care.
 
-;; Copyright (c) 2014 Pavel Matcula
+;; Copyright (c) 2014-2018 Pavel Matcula
 
 ;; Author: Pavel Matcula (M4E5TR0) <dev dot plvlml at google mail>
 ;; URL: https://github.com/dev-plvlml/zenburn-care
@@ -17,7 +17,7 @@
 (deftheme zenburn-care
  "Zenburn color scheme for Vim ported to Emacs with care.")
 
-(let ((class '((class color) (min-colors 89)))
+(let ((class '((class color) (min-colors 256)))
 
  ;; Original colors
  (zenburn-Boolean-fg    "#dca3a3")
@@ -136,6 +136,8 @@
  (zenburn-TabLineSel-bg  "#333333")
  (zenburn-TabLineFill-fg "#dccdcc")
  (zenburn-TabLineFill-bg "#101010")
+ (zenburn-Terminal-fg    "#a8a8a8")
+ (zenburn-Terminal-bg    "#0f0f0f")
  (zenburn-old-Visual-fg  "#233323")
  (zenburn-old-Visual-bg  "#71d3b4")
  (zenburn-Visual-bg      "#2f2f2f")
@@ -147,9 +149,8 @@
  ;; Compatible colors
  (zenburn-care-TabLineMod-fg "#ecbcbc") ; zenburn-DiffText-fg
  (zenburn-care-TabLineMod-bg "#222222") ; zenburn-TabLine-bg
- (zenburn-care-PMenuDis-fg "#545a4f") ; zenburn-Ignore-bg
- (zenburn-care-Header-bg "#393939")
- (zenburn-care-Black   "#2f2f2f") ; zenburn-Visual-bg
+ (zenburn-care-PMenuDis-fg "#545a4f") ; zenburn-Ignore-fg
+ (zenburn-care-Black   "#0f0f0f") ; zenburn-Terminal-bg
  (zenburn-care-Blue    "#c0bed1") ; zenburn-Float-fg
  (zenburn-care-Cyan    "#8cd0d3") ; zenburn-Number-fg
  (zenburn-care-Green   "#9ece9e") ; zenburn-SpecialKey-fg
@@ -183,36 +184,36 @@
  `(link-visited ((t (:foreground ,zenburn-Float-fg  :underline t))))
  
  `(help-argument-name ((t (:slant italic :underline t))))
- 
+
  ;; `(glyphless-char ((t ()))) ; TODO
- 
+
  `(error   ((t (:foreground ,zenburn-ErrorMsg-fg   :background ,zenburn-ErrorMsg-bg   :weight bold))))
  `(warning ((t (:foreground ,zenburn-WarningMsg-fg :background ,zenburn-WarningMsg-bg :weight bold))))
  ;; `(success ((t ()))) ; TODO
- 
+
  ;; Faces used to highlight parts of text temporarily (listed in GNU Emacs manual)
- 
+
  `(highlight ((t (:foreground ,zenburn-Label-fg :underline t))))
- 
+
  `(isearch        ((t (:foreground ,zenburn-IncSearch-fg :background ,zenburn-IncSearch-bg))))
  `(query-replace  ((t (:foreground ,zenburn-IncSearch-fg :background ,zenburn-IncSearch-bg))))
  `(lazy-highlight ((t (:foreground ,zenburn-Search-fg    :background ,zenburn-Search-bg))))
- 
- `(region              ((t (:background ,zenburn-Visual-bg))))
+
+ `(region              ((t (:foreground nil                    :background ,zenburn-Visual-bg))))
  `(secondary-selection ((t (:foreground ,zenburn-DiffDelete-fg :background ,zenburn-DiffDelete-bg)))) ; TESTME
- 
+
  `(trailing-whitespace ((t (                                   :background ,zenburn-SpecialKey-bg)))) ; TESTME
  `(escape-glyph        ((t (:foreground ,zenburn-SpecialKey-fg :background ,zenburn-SpecialKey-bg))))
  `(nobreak-space       ((t (                                   :background ,zenburn-SpecialKey-bg)))) ; TESTME
 
  ;; Faces used to highlight parts of text temporarily (not listed in GNU Emacs manual)
- 
+
  `(show-paren-match    ((t (:foreground ,zenburn-MatchParen-fg :background ,zenburn-MatchParen-bg :weight bold))))
  `(show-paren-mismatch ((t (:foreground ,zenburn-Error-fg      :background ,zenburn-Error-bg      :weight bold))))
- 
+
  `(isearch-fail ((t (:foreground ,zenburn-Error-fg :background ,zenburn-Error-bg))))
- `(match ((t (:foreground ,zenburn-WildMenu-fg :background ,zenburn-WildMenu-bg))))
- `(completions-common-part ((t (:foreground ,zenburn-WildMenu-fg :background ,zenburn-WildMenu-bg))))
+ `(match ((t (:foreground ,zenburn-MatchParen-fg :background ,zenburn-MatchParen-bg))))
+ `(completions-common-part ((t (:foreground ,zenburn-MatchParen-fg :background ,zenburn-MatchParen-bg))))
  `(completions-first-difference ((t (:weight bold))))
 
  ;; Faces that control the appearance of the Emacs frame (listed in GNU Emacs manual)
@@ -227,8 +228,8 @@
  ;;   ((t (:weight bold))))
  ;; `(mode-line-buffer-id
  ;;   ((t (:weight bold))))
- 
- `(header-line ((t (:foreground ,zenburn-Title-fg :background ,zenburn-care-Header-bg :inverse-video nil))))
+
+ `(header-line ((t (:foreground ,zenburn-TabLine-fg :background ,zenburn-TabLine-bg :inverse-video nil))))
  `(vertical-border ((t (:foreground ,zenburn-VertSplit-bg :background ,zenburn-VertSplit-fg))))
  `(minibuffer-prompt ((t (:foreground ,zenburn-Question-fg :weight bold))))
  `(fringe ((t (:foreground ,zenburn-SignColumn-fg :background ,zenburn-SignColumn-bg :weight bold))))
@@ -237,29 +238,29 @@
  `(mouse ((t (:background ,zenburn-Normal-fg))))
 
  ;; Faces that control the appearance of the Emacs frame (not listed in GNU Emacs manual)
- 
+
  `(linum ((t (:inherit default :foreground ,zenburn-LineNr-fg :background ,zenburn-LineNr-bg))))
  `(hl-line ((t (:background ,zenburn-CursorLine-bg))))
 
- ;; Faces that control the appearance of the Emacs frame only on text terminals (listed)
- 
+ ;; Faces that control the appearance of the Emacs frame only on text terminals (listed in GNU Emacs manual)
+
  `(scroll-bar ((t (:foreground ,zenburn-VertSplit-fg :background ,zenburn-LineNr-bg))))
- 
+
  `(tool-bar ((t (:foreground ,zenburn-TabLine-fg :background ,zenburn-TabLine-bg))))
  `(menu     ((t (:foreground ,zenburn-TabLine-fg :background ,zenburn-TabLine-bg))))
- 
+
  `(tty-menu-enabled-face  ((t (:foreground ,zenburn-Pmenu-fg         :background ,zenburn-Pmenu-bg    :weight normal))))
  `(tty-menu-disabled-face ((t (:foreground ,zenburn-care-PMenuDis-fg :background ,zenburn-Pmenu-bg    :weight normal))))
  `(tty-menu-selected-face ((t (:foreground ,zenburn-PMenuSel-fg      :background ,zenburn-PMenuSel-bg :weight bold))))
 
- ;; Faces that control the appearance of the Emacs frame only with X support (not listed)
- 
+ ;; Faces that control the appearance of the Emacs frame only with X support (not listed in GNU Emacs manual)
+
  `(border         ((t (:foreground ,zenburn-VertSplit-bg))))
  `(window-divider ((t (:foreground ,zenburn-VertSplit-bg))))
- 
+
  `(window-divider-first-pixel ((t (:foreground ,zenburn-VertSplit-fg))))
  `(window-divider-last-pixel  ((t (:foreground ,zenburn-VertSplit-fg))))
- 
+
  ;; `(widget-button ((t ()))) ; TODO
  ;; `(widget-button-pressed ((t ()))) ; TODO
  ;; `(widget-documentation ((t ()))) ; TODO
@@ -272,9 +273,13 @@
  ;; `(custom-button-pressed ((t ()))) ; TODO
  ;; `(custom-button-pressed-unraised ((t ()))) ; TODO
  ;; `(custom-button-unraised ((t ()))) ; TODO
- 
+
+ ;; Faces used in ace-jump-mode.el
+ `(ace-jump-face-background ((t (:foreground ,zenburn-Ignore-fg))))
+ `(ace-jump-face-foreground ((t (:foreground ,zenburn-Tag-fg))))
+
  ;; Faces used in auto-complete.el
- `(ac-completion-face      ((t (:foreground ,zenburn-NonText-fg))))
+ `(ac-completion-face      ((t (:foreground ,zenburn-WildMenu-fg :background ,zenburn-WildMenu-bg :underline t))))
  `(ac-candidate-face       ((t (:inherit tty-menu-enabled-face))))
  `(ac-selection-face       ((t (:inherit tty-menu-selected-face))))
  `(ac-candidate-mouse-face ((t (:foreground ,zenburn-PMenuSel-fg))))
@@ -293,12 +298,12 @@
  ;; Faces used in company.el
  ;; `(company-echo        ((t ()))) ; TODO
  ;; `(company-echo-common ((t ()))) ; TODO
- `(company-preview        ((t (:foreground ,zenburn-NonText-fg :weight bold))))
- `(company-preview-common ((t (:foreground ,zenburn-NonText-fg :weight normal))))
+ `(company-preview        ((t (:foreground ,zenburn-WildMenu-fg :background ,zenburn-WildMenu-bg :underline t :weight bold))))
+ `(company-preview-common ((t (:foreground ,zenburn-WildMenu-fg :background ,zenburn-WildMenu-bg :underline t :weight normal))))
  ;; `(company-preview-search ((t ()))) ; TODO
  `(company-scrollbar-fg ((t (:background ,zenburn-PMenuThumb-bg))))
  `(company-scrollbar-bg ((t (:background ,zenburn-PmenuSbar-bg))))
- ;; `(company-template-field ((t ()))) ; TODO
+ `(company-template-field ((t (:foreground ,zenburn-DiffChange-fg :background ,zenburn-DiffChange-bg)))) ; TESTME
  `(company-tooltip                  ((t (:inherit tty-menu-enabled-face  :weight bold))))
  `(company-tooltip-common           ((t (:inherit tty-menu-enabled-face))))
  `(company-tooltip-selection        ((t (:inherit tty-menu-selected-face))))
@@ -307,18 +312,18 @@
  `(company-tooltip-annotation       ((t (:inherit tooltip))))
 
  ;; Faces used in diff.el
- `(diff-added   ((t (:foreground ,zenburn-DiffAdd-fg    :background ,zenburn-DiffAdd-bg       :weight bold))))
- `(diff-changed ((t (:foreground ,zenburn-DiffChange-fg :background ,zenburn-DiffChange-bg))))
- `(diff-removed ((t (:foreground ,zenburn-DiffDelete-fg :background ,zenburn-DiffDelete-bg))))
- `(diff-refine-added   ((t (:inherit diff-refine-changed)))) ; TESTME
- `(diff-refine-changed ((t (:foreground ,zenburn-DiffText-fg :background ,zenburn-DiffText-bg :weight bold))))
- `(diff-refine-removed ((t (:inherit diff-refine-changed)))) ; TESTME
+ `(diff-added   ((t (:foreground nil :background ,zenburn-DiffAdd-bg))))
+ `(diff-changed ((t (:foreground nil :background ,zenburn-DiffChange-bg))))
+ `(diff-removed ((t (:foreground nil :background ,zenburn-DiffText-bg))))
+ `(diff-refine-added   ((t (:foreground ,zenburn-DiffAdd-fg    :background ,zenburn-DiffAdd-bg    :weight bold))))
+ `(diff-refine-changed ((t (:foreground ,zenburn-DiffChange-fg :background ,zenburn-DiffChange-bg :weight bold))))
+ `(diff-refine-removed ((t (:foreground ,zenburn-DiffText-fg   :background ,zenburn-DiffText-bg   :weight bold))))
  ;; `(diff-indicator-added   ((t (:inherit diff-added)))) ; TODO
  ;; `(diff-indicator-changed ((t (:inherit diff-changed)))) ; TODO
  ;; `(diff-indicator-removed ((t (:inherit diff-removed)))) ; TODO
- `(diff-context     ((t (:inherit default))))
- `(diff-header      ((t (:inherit header-line :weight normal)))) ; TESTME
- `(diff-file-header ((t (:inherit header-line :weight bold)))) ; TESTME
+ `(diff-context     ((t (:inherit unspecified))))
+ `(diff-header      ((t (:foreground ,zenburn-Title-fg :weight normal)))) ; TESTME
+ `(diff-file-header ((t (:foreground ,zenburn-Title-fg :weight bold)))) ; TESTME
  `(diff-hunk-header ((t (:foreground ,zenburn-Folded-fg :background ,zenburn-Folded-bg)))) ; TESTME
  ;; `(diff-index       ((t ()))) ; TODO
  `(diff-function    ((t (:foreground ,zenburn-Function-fg)))) ; TESTME
@@ -452,7 +457,7 @@
  ;; Faces used in highline.el
  `(highline-face          ((t (:background ,zenburn-CursorLine-bg))))
  `(highline-vertical-face ((t (:background ,zenburn-CursorColumn-bg))))
- 
+
  ;; Faces used in hl-todo.el
  `(hl-todo ((t (:foreground ,zenburn-SpecialComment-fg :weight bold))))
 
@@ -464,7 +469,7 @@
 
  ;; Faces used in ido.el
  `(ido-first-match ((t (:foreground ,zenburn-WildMenu-fg :background ,zenburn-WildMenu-bg :underline t))))
- ;; `(ido-incomplete-regexp ((t ()))) ; TODO
+ `(ido-incomplete-regexp ((t (:inherit isearch-fail))))
  ;; `(ido-indicator ((t ()))) ; TODO
  `(ido-only-match  ((t (:foreground ,zenburn-WildMenu-fg :background ,zenburn-WildMenu-bg :underline t))))
  `(ido-subdir      ((t (:foreground ,zenburn-Directory-fg :weight bold))))
@@ -474,7 +479,7 @@
  `(indent-guide-face ((t (:foreground ,zenburn-NonText-fg))))
 
  ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;FROM HERE;;;;;;;;;;;;;;;;;;;;;;;
- 
+
  ;; Faces used in info.el
  `(Info-quoted       ((t (:inherit fixed-pitch))))
  `(info-header-node  ((t (:inherit info-node)))) ; FIXME
@@ -495,12 +500,15 @@
  ;; `(makefile-shell   ((t ()))) ; TODO
  `(makefile-space   ((t (:inherit trailing-whitespace)))) ; FIXME
  `(makefile-targets ((t (:foreground ,zenburn-Function-fg))))
- 
+
  ;; Faces used in man.el
  `(Man-overstrike ((t (:weight bold))))
  ;; `(Man-reverse    ((t ()))) ; TODO
  `(Man-underline  ((t (:underline t :slant italic))))
- 
+
+ ;; Faces used in nlinum.el
+ `(nlinum-current-line ((t (:inherit linum :foreground ,zenburn-CursorLineNr-fg :background ,zenburn-CursorLineNr-bg))))
+
  ;; Faces used in number-font-lock-mode.el
  `(number-font-lock-face ((t (:foreground ,zenburn-Number-fg))))
 
@@ -515,7 +523,7 @@
  `(org-document-info         ((t (:foreground ,zenburn-String-fg)))) ; FIXME
  `(org-document-info-keyword ((t (:foreground ,zenburn-Ignore-fg   :slant italic)))) ; FIXME
  `(org-document-title        ((t (:foreground ,zenburn-Constant-fg :weight bold)))) ; FIXME
- 
+
  `(org-block            ((t (:foreground ,zenburn-Normal-fg :background ,zenburn-DiffDelete-bg))))
  `(org-block-background ((t (                               :background ,zenburn-DiffDelete-bg))))
  `(org-block-begin-line ((t (:foreground ,zenburn-Folded-fg :background ,zenburn-Folded-bg :slant italic))))
@@ -527,7 +535,12 @@
  ;; `(org-tree-slide-heading-level-2-init ((t ())))
  ;; `(org-tree-slide-heading-level-3      ((t ())))
  ;; `(org-tree-slide-heading-level-3-init ((t ())))
- 
+
+ ;; Faces used in origami.el
+ `(origami-fold-fringe-face      ((t (:foreground ,zenburn-FoldColumn-fg :background ,zenburn-FoldColumn-bg))))
+ ;; `(origami-fold-header-face      ((t ()))) ; TODO
+ `(origami-fold-replacement-face ((t (:foreground ,zenburn-Folded-fg     :background ,zenburn-Folded-bg))))
+
  ;; Faces used in outline.el
  `(outline-1      ((t (:inherit outline-2 :height 1.2))))
  `(outline-2      ((t (:inherit outline-3 :height 1.0))))
@@ -537,7 +550,7 @@
  ;; `(outline-6 ((t ()))) ; TODO
  ;; `(outline-7 ((t ()))) ; TODO
  ;; `(outline-8 ((t ()))) ; TODO
- 
+
  ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UNTIL HERE;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
  ;; Faces used in paradox.el
@@ -553,10 +566,10 @@
  ;; `(paradox-name-face        ((t (:inherit link))))
  ;; `(paradox-star-face        ((t ()))) ; TODO
  ;; `(paradox-starred-face     ((t ()))) ; TODO
- 
+
  ;; Faces used in paren-face.el
  `(parenthesis ((t (:foreground ,zenburn-Delimiter-fg))))
- 
+
  ;; Faces used in pkgbuild-mode.el
  `(pkgbuild-error-face
    ((((supports :underline (:style wave)))
@@ -579,6 +592,15 @@
  `(sp-show-pair-match-face    ((t (:inherit show-paren-match))))
  `(sp-show-pair-mismatch-face ((t (:inherit show-paren-mismatch))))
 
+ ;; Facse used in smerge.el
+ `(smerge-base ((t (:inherit unspecified))))
+ `(smerge-markers ((t (:foreground ,zenburn-Folded-fg :background ,zenburn-Folded-bg))))
+ `(smerge-mine  ((t (:foreground nil :background ,zenburn-DiffText-bg))))
+ `(smerge-other ((t (:foreground nil :background ,zenburn-DiffAdd-bg))))
+ `(smerge-refined-added   ((t (:foreground ,zenburn-DiffAdd-fg    :background ,zenburn-DiffAdd-bg    :weight bold))))
+ `(smerge-refined-changed ((t (:foreground ,zenburn-DiffChange-fg :background ,zenburn-DiffChange-bg :weight bold))))
+ `(smerge-refined-removed ((t (:foreground ,zenburn-DiffText-fg   :background ,zenburn-DiffText-bg   :weight bold))))
+
  ;; Faces used in tabbar.el
  `(tabbar-default    ((t (:foreground ,zenburn-TabLineFill-fg     :background ,zenburn-TabLineFill-bg     :weight normal :box nil))))
  `(tabbar-unselected ((t (:foreground ,zenburn-TabLine-fg         :background ,zenburn-TabLine-bg         :weight normal :box nil))))
@@ -590,6 +612,7 @@
  `(tabbar-button-highlight ((t (:foreground ,zenburn-TabLineSel-fg :background ,zenburn-TabLine-bg))))
 
  ;; Faces used in term.el
+ `(term               ((t (:foreground ,zenburn-Terminal-fg :background ,zenburn-Terminal-bg))))
  `(term-color-black   ((t (:foreground ,zenburn-care-Black))))
  `(term-color-blue    ((t (:foreground ,zenburn-care-Blue))))
  `(term-color-cyan    ((t (:foreground ,zenburn-care-Cyan))))
@@ -602,12 +625,25 @@
  ;; Faces used in vim-empty-lines-mode.el
  `(vim-empty-lines-face ((t (:foreground ,zenburn-NonText-fg))))
 
+ ;; Faces used in which-func.el
+ `(which-func ((t (:foreground ,zenburn-TabLine-fg))))
+
  ;; Faces used in yasnippet.el
  ;; `(yas-field-highlight-face ((t ()))) ; TODO
  )
 
 (custom-theme-set-variables
- 'zenburn-care))
+ 'zenburn-care
+ `(ansi-color-names-vector [,zenburn-care-Black
+                            ,zenburn-care-Red
+                            ,zenburn-care-Green
+                            ,zenburn-care-Yellow
+                            ,zenburn-care-Blue
+                            ,zenburn-care-Magenta
+                            ,zenburn-care-Cyan
+                            ,zenburn-care-White])
+ )
+)
 
 (provide-theme 'zenburn-care)
 
