@@ -592,7 +592,7 @@
  `(sp-show-pair-match-face    ((t (:inherit show-paren-match))))
  `(sp-show-pair-mismatch-face ((t (:inherit show-paren-mismatch))))
 
- ;; Facse used in smerge.el
+ ;; Faces used in smerge.el
  `(smerge-base ((t (:inherit unspecified))))
  `(smerge-markers ((t (:foreground ,zenburn-Folded-fg :background ,zenburn-Folded-bg))))
  `(smerge-mine  ((t (:foreground nil :background ,zenburn-DiffText-bg))))
