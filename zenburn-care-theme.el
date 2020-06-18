@@ -628,6 +628,13 @@
  ;; Faces used in which-func.el
  `(which-func ((t (:foreground ,zenburn-TabLine-fg))))
 
+ ;; Faces used in wgrep.el
+ ;; `(wgrep-delete-face ((t ()))) ; TODO
+ ;; `(wgrep-done-face   ((t ()))) ; TODO
+ ;; `(wgrep-face        ((t ()))) ; TODO
+ ;; `(wgrep-file-face   ((t ()))) ; TODO
+ ;; `(wgrep-reject-face ((t ()))) ; TODO
+
  ;; Faces used in yasnippet.el
  ;; `(yas-field-highlight-face ((t ()))) ; TODO
  )
